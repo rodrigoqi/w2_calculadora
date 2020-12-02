@@ -32,6 +32,83 @@
 			</div>
 		</div>
 
+		<form action="index.php" method="get">
+			<br>
+			<div class="row text-center">
+				<div class="col-md-12">
+					Valor 1<br>
+					<input type="text" name="valor1" size="10" value="">
+				</div>
+			</div>
+
+			<br>
+			<div class="row text-center">
+				<div class="col-md-12">
+					Valor 2<br>
+					<input type="text" name="valor2" size="10" value="">
+				</div>
+			</div>
+
+			<br>
+			<div class="row text-center">
+				<div class="col-md-12">
+					Selecione a operação<br>
+					<select name="operacao">
+						<option>Somar</option>
+						<option>Subtrair</option>
+						<option>Multiplicar</option>
+						<option>Dividir</option>
+					</select>
+				</div>
+			</div>	
+
+			<br>
+			<div class="row text-center">
+				<div class="col-md-12">
+					<input type="submit" name="btnCalcular" value="Calcular">
+				</div>
+			</div>
+
+			<br>
+			<div class="row text-center">
+				<div class="col-md-2 offset-md-5" id="display">
+		
+				<?php
+					
+					if(isset($_GET["valor1"])){
+						$v1 = $_GET["valor1"];
+						$v2 = $_GET["valor2"];
+						$op = $_GET["operacao"];
+
+						if($op=="Somar"){
+							$resultado = $v1 + $v2;
+						}
+
+						if($op=="Subtrair"){
+							$resultado = $v1 - $v2;
+						}
+
+						if($op=="Multiplicar"){
+							$resultado = $v1 * $v2;
+						}
+
+						if($op=="Dividir"){
+							$resultado = $v1 / $v2;
+						}
+
+						echo "$resultado";
+
+					}
+					
+
+
+				?>
+
+				</div>
+			</div>
+
+		</form>
+
 	</div>
 </body>
 
